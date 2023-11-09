@@ -1,0 +1,18 @@
+ul{
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+
+  
+li {
+    width: 50%;
+    display: inline;
+    font-size: xx-large;
+  }
+h1{
+    text-align: center;
+  }
+ul li{
+    margin-right: 13px;
+  }
