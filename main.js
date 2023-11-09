@@ -2,7 +2,7 @@ player1_score = document.getElementById('player1');
 player2_score = document.getElementById('player2');
 tieResult = document.getElementById('tie')
 result = document.getElementById('result')
-
+var p1 = 0  
 var tieResult = 0;
 var result = 0;
 var player1_score = 0
@@ -25,4 +25,4 @@ function computerScore(player1, player2){
         }
     }
     
-}
+}               
