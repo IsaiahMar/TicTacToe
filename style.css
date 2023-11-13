@@ -79,10 +79,63 @@ background: -webkit-radial-gradient(circle, hsla(43, 83%, 93%, 1) 0%, hsla(16, 6
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", endColorstr="#F8E7E1", GradientType=1 );
   }
+<<<<<<< HEAD
+.drag {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  width: 100px;
+  gap: 10px;
+  margin: 0 40px;
+  cursor: grab;
+}
+.board-box{
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  background-color: #fff;
+}
+ #circle-box{
+  display: inline-flexbox;
+  float: right;
+ }
+ #cross-box{
+
+display: inline-flexbox;
+float: left;
+  
+ }
+ .cross{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .cross:before{
+  content: 'X';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #fff;
+  font-size: x-large;
+}
+.circle{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+=======
   #test{
     text-align: center;
   }
 
+>>>>>>> 7b7bd67e108e1d99eafea2c699d102e399720204
 
 #reset{
   position: absolute;
@@ -94,4 +147,3 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
   outline: none;
   align-items: center 20%;
 }
-
