@@ -35,14 +35,8 @@
         </div>
     </div>
     
+            
 
-=======
-            <ol>Score Board</ol>
-           <li>Player 1 Wins:</li>
-           <li>Player 2 Wins:</li>
-            <li>Ties:</li>
-        </ul>
-    </div>
     <section class="board">
         <div class="grid">
             <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b1">
@@ -74,6 +68,9 @@
             </div>
         </div>
     </section>
+
+
+
     <div class="drag" id="cross-box">
         <div class="board-box">
             <div class="cross" draggable="true" ondragstart="dragItem(event)" id="cross1"></div>
@@ -91,6 +88,8 @@
             <div class="cross" draggable="true" ondragstart="dragItem(event)" id="cross5"></div>
         </div>
     </div>
+
+    
     <section class="other-controls">
         <button id="reset" onclick="reset();">Reset</button>
     </section>
