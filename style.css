@@ -79,6 +79,7 @@ background: -webkit-radial-gradient(circle, hsla(43, 83%, 93%, 1) 0%, hsla(16, 6
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", endColorstr="#F8E7E1", GradientType=1 );
   }
+<<<<<<< HEAD
 .drag {
   display: flex;
   position: relative;
@@ -129,6 +130,12 @@ float: left;
   border: 5px solid black;
   border-radius: 50%;
 }
+=======
+  #test{
+    text-align: center;
+  }
+
+>>>>>>> 7b7bd67e108e1d99eafea2c699d102e399720204
 
 #reset{
   position: absolute;
