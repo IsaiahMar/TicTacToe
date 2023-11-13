@@ -95,13 +95,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
   background-color: #fff;
 }
  #circle-box{
-  left: 80%;
-  bottom: 20%;
+  display: inline-flexbox;
+  float: right;
  }
  #cross-box{
-  left: 10%;
-  top: 30%;
-  position: relative;
+
+display: inline-flexbox;
+float: left;
+  
  }
  .cross{
   position: relative;
@@ -137,4 +138,3 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
   outline: none;
   align-items: center 20%;
 }
-
