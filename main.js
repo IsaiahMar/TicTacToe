@@ -32,11 +32,11 @@ function playTheGame(){
     {
         if(board1.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board1.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         }
     }
 
@@ -44,75 +44,75 @@ function playTheGame(){
     {
         if(board1.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board1.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         } 
     }
    else if((board2.innerHTML == board5.innerHTML) && (board5.innerHTML == board8.innerHTML))
     {
         if(board2.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board2.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         }
     }
     else if((board3.innerHTML == board6.innerHTML) && (board6.innerHTML == board9.innerHTML))
     {
         if(board3.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board3.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         }
     }
    else if((board4.innerHTML == board5.innerHTML) && (board5.innerHTML == board6.innerHTML))
     {
         if(board4.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board4.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         }
        
     }
     else if((board1.innerHTML == board4.innerHTML) && (board4.innerHTML == board7.innerHTML)){
         if(board1.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board1.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         }
     }
     else if((board3.innerHTML == board5.innerHTML) && (board5.innerHTML == board7.innerHTML)){
         if(board3.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board3.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         }
     }
     else if((board7.innerHTML == board8.innerHTML) && (board8.innerHTML == board9.innerHTML)){
         if(board7.innerHTML === "X"){
             console.log("win")
-            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            document.getElementById('onescore').textContent = `Player 1 Wins`;
             
         }
         else if(board7.innerHTML === "O"){
-            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+            document.getElementById('twoscore').textContent = `Player 2 Wins`
         }
     }
     else if(turns === 9){
@@ -269,7 +269,7 @@ function turn9(){
     }
     else if(turn === 9){
         document.getElementById('tiescore').textContent = `It's a Tie`
-        
+
     } 
     else { 
         document.getElementById("b9").innerHTML = "O"; 
