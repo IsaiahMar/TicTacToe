@@ -77,3 +77,64 @@ background: -webkit-radial-gradient(circle, hsla(43, 83%, 93%, 1) 0%, hsla(16, 6
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", endColorstr="#F8E7E1", GradientType=1 );
   }
+.drag {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  width: 100px;
+  gap: 10px;
+  margin: 0 40px;
+  cursor: grab;
+}
+.board-box{
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  background-color: #fff;
+}
+ #circle-box{
+  left: 80%;
+  bottom: 20%;
+ }
+ #cross-box{
+  left: 10%;
+  top: 30%;
+  position: relative;
+ }
+ .cross{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .cross:before{
+  content: 'X';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #fff;
+  font-size: x-large;
+}
+.circle{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+#reset{
+  position: absolute;
+  bottom: -30%;
+  right: 50%;
+  transform: translateX(-50%);
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  align-items: center 20%;
+}
+

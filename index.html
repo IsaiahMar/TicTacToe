@@ -5,12 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Tic Tac Toe</title>
-    <script src="main.js"></script>
+    
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
     <div class="wlt">
         <ul>
+
+            <li class="score">Player 1 Wins:</li>
+            <li class="score">Player 2 Wins:</li>
+            <li id="tieScore">Ties:</li>
+        </ul>
+    </div>
+    <div class="drag" id="circle-box">
+        <div class="board-box">
+            <div class="circle" draggable="true" ondragstart="dragItem(event)" id="circle1"></div>
+        </div>
+        <div class="board-box">
+            <div class="circle" draggable="true" ondragstart="dragItem(event)" id="circle2"></div>
+        </div>
+        <div class="board-box">
+            <div class="circle" draggable="true" ondragstart="dragItem(event)" id="circle3"></div>
+        </div>
+        <div class="board-box">
+            <div class="circle" draggable="true" ondragstart="dragItem(event)" id="circle4"></div>
+        </div>
+        <div class="board-box">
+            <div class="circle" draggable="true" ondragstart="dragItem(event)" id="circle5"></div>
+        </div>
+    </div>
+    
+
+=======
             <ol>Score Board</ol>
            <li>Player 1 Wins:</li>
            <li>Player 2 Wins:</li>
@@ -19,34 +45,55 @@
     </div>
     <section class="board">
         <div class="grid">
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b1">
+                
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b2">
+                
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b3">
+                
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b4">
+                
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b5">
+              
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b6">
+                
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b7">
+                
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b8">
+                
             </div>
-            <div class="grid-square">
-                placeholder
+            <div class="grid-square" ondrop="dropItems(event)" ondragover="allowDropItems(event)" id="b9">
+                
             </div>
         </div>
     </section>
+    <div class="drag" id="cross-box">
+        <div class="board-box">
+            <div class="cross" draggable="true" ondragstart="dragItem(event)" id="cross1"></div>
+        </div>
+        <div class="board-box">
+            <div class="cross" draggable="true" ondragstart="dragItem(event)" id="cross2"></div>
+        </div>
+        <div class="board-box">
+            <div class="cross" draggable="true" ondragstart="dragItem(event)" id="cross3"></div>
+        </div>
+        <div class="board-box">
+            <div class="cross" draggable="true" ondragstart="dragItem(event)" id="cross4"></div>
+        </div>
+        <div class="board-box">
+            <div class="cross" draggable="true" ondragstart="dragItem(event)" id="cross5"></div>
+        </div>
+    </div>
+    <section class="other-controls">
+        <button id="reset" onclick="reset();">Reset</button>
+    </section>
+    <script src="main.js"></script>
 </body>
 </html>
