@@ -332,6 +332,7 @@ function getWinner(){
     winner.push([3, 5, 7]);
 
     
+
     if(player1 || player2 === winner){
         score += 1
     }
