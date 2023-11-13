@@ -17,6 +17,7 @@ function dropItems(event){
     event.preventDefault()
     var game = event.dataTransfer.getData('text')
     event.target.appendChild(document.getElementById(game))
+    
 }
 
 function playTheGame(){
@@ -45,7 +46,7 @@ function playTheGame(){
     b9btn = document.getElementById("b9"); 
 
     if ((board1 == cross) && (board2 == cross) && (board3 == cross)) { 
-    document.getElementById('print').innerHTML = "Player X won"; 
+    dropItems();
     b4btn.disabled = true; 
     b5btn.disabled = true; 
     b6btn.disabled = true; 
@@ -59,8 +60,7 @@ function playTheGame(){
 } 
 else if (( board1 == cross) && (board4 == 'x' || 
     board4 == cross) && (board7 == 'x' || board7 == cross)) { 
-    document.getElementById('print') 
-        .innerHTML = "Player X won"; 
+    dropItems();
     b2btn.disabled = true; 
     b3btn.disabled = true; 
     b5btn.disabled = true; 
@@ -74,7 +74,7 @@ else if (( board1 == cross) && (board4 == 'x' ||
 } 
 else if ((board7 == 'x' || board7 == cross) && (board8 == 'x' || 
     board8 == cross) && (board9 == 'x' || board9 == cross)) { 
-
+    dropItems()
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b3btn.disabled = true; 
@@ -88,7 +88,7 @@ else if ((board7 == 'x' || board7 == cross) && (board8 == 'x' ||
 } 
 else if ((board3 == 'x' || board3 == cross) && (board6 == 'x' || 
     board6 == cross) && (board9 == 'x' || board9 == cross)) { 
-    document.getElementById('print').innerHTML = "Player X won"; 
+    dropItems()
 
     b1btn.disabled = true; 
     b2btn.disabled = true; 
@@ -103,7 +103,7 @@ else if ((board3 == 'x' || board3 == cross) && (board6 == 'x' ||
 } 
 else if ((board1 == 'x' || board1 == cross) && (board5 == 'x' || 
     board5 == cross) && (board9 == 'x' || board9 == cross)) { 
-    document.getElementById('print').innerHTML = "Player X won"; 
+    dropItems()
     b2btn.disabled = true; 
     b3btn.disabled = true; 
     b4btn.disabled = true; 
@@ -117,7 +117,7 @@ else if ((board1 == 'x' || board1 == cross) && (board5 == 'x' ||
 } 
 else if ((board3 == 'x' || board3 == cross) && (board5 == 'x' || 
     board5 == cross) && (board7 == 'x' || board7 == cross)) { 
-    document.getElementById('print').innerHTML = "Player X won"; 
+    dropItems()
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b4btn.disabled = true; 
@@ -131,7 +131,7 @@ else if ((board3 == 'x' || board3 == cross) && (board5 == 'x' ||
 } 
 else if ((board2 == 'x' || board2 == cross) && (board5 == 'x' || 
     board5 == cross) && (board8 == 'x' || board8 == cross)) { 
-    document.getElementById('print').innerHTML = "Player X won"; 
+    dropItems()
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b4btn.disabled = true; 
@@ -145,8 +145,7 @@ else if ((board2 == 'x' || board2 == cross) && (board5 == 'x' ||
 } 
 else if ((board4 == 'x' || board4 == cross) && (board5 == 'x' || 
     board5 == cross) && (board6 == 'x' || board6 == cross)) { 
-    document.getElementById('print') 
-        .innerHTML = "Player X won"; 
+    dropItems()
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b3btn.disabled = true; 
@@ -161,8 +160,7 @@ else if ((board4 == 'x' || board4 == cross) && (board5 == 'x' ||
 
 else if ((board1 == '0' || board1 == cross) && (board2 == '0' || 
     b2 == cross) && (b3 == '0' || b3 == cross)) { 
-    document.getElementById('print') 
-        .innerHTML = "Player 0 won"; 
+    dropItems()
     b4btn.disabled = true; 
     b5btn.disabled = true; 
     b6btn.disabled = true; 
@@ -175,7 +173,7 @@ else if ((board1 == '0' || board1 == cross) && (board2 == '0' ||
     b3btn.style.color = "red"; 
 } 
 else if ((board1 == circle) && (board4 == circle) && (board7 == circle)) { 
-    document.getElementById('print').innerHTML = "Player 0 won"; 
+    dropItems()
     b2btn.disabled = true; 
     b3btn.disabled = true; 
     b5btn.disabled = true; 
@@ -188,7 +186,7 @@ else if ((board1 == circle) && (board4 == circle) && (board7 == circle)) {
     b7btn.style.color = "red"; 
 } 
 else if ((board7 == circle) && (board8 == circle) && (board9 == circle)) { 
-    document.getElementById('print').innerHTML = "Player 0 won"; 
+    dropItems() 
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b3btn.disabled = true; 
@@ -202,7 +200,7 @@ else if ((board7 == circle) && (board8 == circle) && (board9 == circle)) {
 } 
 else if ((board3 == '0' || board3 == '0') && (board6 == '0' || 
     board6 == '0') && (board9 == '0' || board9 == '0')) { 
-    document.getElementById('print').innerHTML = "Player 0 won"; 
+    dropItems()
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b4btn.disabled = true; 
@@ -216,8 +214,7 @@ else if ((board3 == '0' || board3 == '0') && (board6 == '0' ||
 } 
 else if ((board1 == '0' || board1 == '0') && (board5 == '0' || 
     board5 == '0') && (board9 == '0' || board9 == '0')) { 
-    document.getElementById('print') 
-        .innerHTML = "Player 0 won"; 
+    dropItems()
     b2btn.disabled = true; 
     b3btn.disabled = true; 
     b4btn.disabled = true; 
@@ -231,8 +228,7 @@ else if ((board1 == '0' || board1 == '0') && (board5 == '0' ||
 } 
 else if ((board3 == '0' || board3 == '0') && (board5 == '0' || 
     board5 == '0') && (board7 == '0' || board7 == '0')) { 
-    document.getElementById('print') 
-        .innerHTML = "Player 0 won"; 
+    dropItems()
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b4btn.disabled = true; 
@@ -246,8 +242,7 @@ else if ((board3 == '0' || board3 == '0') && (board5 == '0' ||
 } 
 else if ((board2 == '0' || board2 == '0') && (board5 == '0' || 
     board5 == '0') && (board8 == '0' || board8 == '0')) { 
-    document.getElementById('print') 
-        .innerHTML = "Player 0 won"; 
+    dropItems()
     b1btn.disabled = true; 
     b3btn.disabled = true; 
     b4btn.disabled = true; 
@@ -261,8 +256,7 @@ else if ((board2 == '0' || board2 == '0') && (board5 == '0' ||
 } 
 else if ((board4 == '0' || board4 == '0') && (board5 == '0' || 
     board5 == '0') && (board6 == '0' || board6 == '0')) { 
-    document.getElementById('print') 
-        .innerHTML = "Player 0 won"; 
+    dropItems()
     b1btn.disabled = true; 
     b2btn.disabled = true; 
     b3btn.disabled = true; 
@@ -298,20 +292,20 @@ else {
 }
 function playGame(e){
     e.preventDefault()
-    for(i = 0; i < winner.length; i++){
-        if(circle = "dragged"){
-            let playerText = document.createElement('p')
-            playerText.innerHTML = "Player 2 moved";
+    if(circle = "dragged"){
+            let player1Text = document.createElement('p')
+            player1Text.innerHTML = "<p>Player 2 moved</p>";
             document.getElementById("circle-box").appendChild(playerText)
             let circle = document.querySelector("div")
             circle.setAttribute("draggable", false)
             
         }
         else if(cross = "dragged"){
+            let player2Text = document.createElement('p')
+            player2Text.innerHTML = '<p>Player 2 moved</p>';
             document.getElementById("circle-box").disabled = false
             document.getElementById("cross-box").disabled = true
         }
-    }
   
 }
 playGame();
