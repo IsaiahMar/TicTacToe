@@ -8,17 +8,18 @@ ul{
     position: relative;
   
     text-align: left;
-    float: left;
   }
 
   
 li  {
     width: 100%;
     font-size: xx-large;
+    list-style-type: none;
   }
 h1{
     display:flexbox;
     text-align: center;
+    margin: 0 70px 0 0;
   }
 ul li{
 text-align: left;
@@ -26,6 +27,7 @@ text-align: left;
 ul{
   border: solid 10px;
   width: 500px;
+  margin: 0 0 0 35%;
   background: hsla(303, 79%, 76%, 1);
 
   background: linear-gradient(90deg, hsla(303, 79%, 76%, 1) 0%, hsla(360, 86%, 67%, 1) 100%);
