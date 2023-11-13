@@ -89,7 +89,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
   margin: 0 40px;
   cursor: grab;
 }
-.drag .board-box{
+.board-box{
   padding: 15px;
   background: rgba(255, 255, 255, 0.1);
   background-color: #fff;
@@ -101,8 +101,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
  #cross-box{
   left: 10%;
   top: 30%;
+  position: relative;
  }
-.drag .board-box .cross{
+ .cross{
   position: relative;
   width: 50px;
   height: 50px;
@@ -110,7 +111,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
   justify-content: center;
   align-items: center;
 }
-.drag .board-box .cross:before{
+ .cross:before{
   content: 'X';
   position: absolute;
   width: 5px;
@@ -118,13 +119,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
   background: #fff;
   font-size: x-large;
 }
-.drag .board-box .circle{
+.circle{
   position: relative;
   width: 50px;
   height: 50px;
   border: 5px solid black;
   border-radius: 50%;
 }
+
 #reset{
   position: absolute;
   bottom: -30%;

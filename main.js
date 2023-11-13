@@ -71,6 +71,12 @@
 // function winningMessage(){
 //     alert("Good job you won")
 // }
+var winner = [];
+var circle = document.getElementById("circle-box");
+var cross = document.getElementById("cross-box");
+var score = document.getElementsByClassName("score")
+var tieScore = document.getElementById("tieScore")
+var dragged;
 
 function dragItem(event){
     event.dataTransfer.setData('text', event.target.id)
@@ -81,5 +87,65 @@ function allowDropItems(event){
 function dropItems(event){
     event.preventDefault()
     var game = event.dataTransfer.getData('text')
-    event.target.appendchild(document.getElementById(game))
+    event.target.appendChild(document.getElementById(game))
+}
+
+// function playTheGame(){
+//     var board1, board2, board3, board4, board5, board6, board7, board8, board9;
+//     board1 = document.getElementById("b1")
+//     board2 = document.getElementById("b2")
+//     board3 = document.getElementById("b3")
+//     board4 = document.getElementById("b4")
+//     board5 = document.getElementById("b5")
+//     board6 = document.getElementById("b6")
+//     board7 = document.getElementById("b7")
+//     board8 = document.getElementById("b8")
+//     board9 = document.getElementById("b9")
+// }
+function playGame(e){
+    e.preventDefault()
+    for(i = 0; i < winner.length; i++){
+        if(circle = "dragged"){
+            let playerText = document.createElement('p')
+            playerText.innerHTML = "Player 2 moved";
+            document.getElementById("circle-box").appendChild(playerText)
+            let circle = document.querySelector("div")
+            circle.setAttribute("draggable", false)
+            
+        }
+        else if(cross = "dragged"){
+            document.getElementById("circle-box").disabled = false
+            document.getElementById("cross-box").disabled = true
+        }
+    }
+  
+}
+playGame();
+function getWinner(){
+    var player1;
+    var player2;
+    circle = player1;
+    cross = player2;
+    score = 0;
+    tieScore = 0;
+    winner.push([1, 2, 3]);
+    winner.push([4, 5, 6]);
+    winner.push([7, 8, 9]);
+    winner.push([1, 4, 7]);
+    winner.push([2, 5, 8]);
+    winner.push([3, 6, 9]);
+    winner.push([1, 5, 9]);
+    winner.push([3, 5, 7]);
+
+    
+    if(player1 || player2 === winner){
+        score += 1
+    }
+    else{
+        tieScore += 1
+    }
+}
+function reset(){
+    location.reload()
+    board1 = board2 = board3 = board4 = board5 = board6 = board7 = board8 = board9 = '';
 }

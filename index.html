@@ -11,9 +11,9 @@
     <h1>Tic Tac Toe</h1>
     <div class="wlt">
         <ul>
-            <li>Player 1 Wins:</li>
-            <li>Player 2 Wins:</li>
-            <li>Ties:</li>
+            <li class="score">Player 1 Wins:</li>
+            <li class="score">Player 2 Wins:</li>
+            <li id="tieScore">Ties:</li>
         </ul>
     </div>
     <div class="drag" id="circle-box">
@@ -84,7 +84,7 @@
         </div>
     </div>
     <section class="other-controls">
-        <button id="reset">Reset</button>
+        <button id="reset" onclick="reset();">Reset</button>
     </section>
     <script src="main.js"></script>
 </body>
