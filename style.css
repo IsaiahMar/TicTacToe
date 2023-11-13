@@ -10,8 +10,14 @@ ul{
     text-align: left;
     float: left;
   }
-
-  
+  p { 
+    margin-bottom: -10px; 
+} 
+.ui { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+} 
 li  {
     width: 100%;
     font-size: xx-large;
@@ -77,10 +83,15 @@ background: -webkit-radial-gradient(circle, hsla(43, 83%, 93%, 1) 0%, hsla(16, 6
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", endColorstr="#F8E7E1", GradientType=1 );
   }
+  .grid-square::after{
+    outline: none;
+  }
   #test{
     text-align: center;
   }
-
+#print{
+  text-align: center;
+}
 
 #reset{
   position: absolute;
@@ -91,5 +102,16 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCF4DF", en
   border: none;
   outline: none;
   align-items: center 20%;
+}
+.cell{
+  border: none; 
+  width: 80px; 
+  height: 80px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 24px; 
+  text-align: center; 
+  cursor: pointer; 
 }
 

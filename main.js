@@ -1,26 +1,10 @@
-var winner = [];
-var circle = document.getElementById("circle-box");
-var circles = document.getElementsByClassName('circle')
-var crosses = document.getElementsByClassName('cross')
-var cross = document.getElementById("cross-box");
-var score = document.getElementsByClassName("score")
-var tieScore = document.getElementById("tieScore")
-var dragged;
 var turn = 1;
-function dragItem(event){
-    event.dataTransfer.setData('text', event.target.id)
-}
-function allowDropItems(event){
-    event.preventDefault()
-}
-function dropItems(event){
-    event.preventDefault()
-    var game = event.dataTransfer.getData('text')
-    event.target.appendChild(document.getElementById(game))
-    
-}
-
+var onescore = 0
+var twoscore = 0
+var tiescore = 0
+var turns = 0
 function playTheGame(){
+    
     var board1, board2, board3, board4, board5, board6, board7, board8, board9;
     board1 = document.getElementById("b1")
     board2 = document.getElementById("b2")
@@ -34,7 +18,6 @@ function playTheGame(){
 
     var b1btn, b2btn, b3btn, b4btn, b5btn,  
         b6btn, b7btn, b8btn, b9btn; 
-    var 
     b1btn = document.getElementById("b1"); 
     b2btn = document.getElementById("b2"); 
     b3btn = document.getElementById("b3"); 
@@ -45,299 +28,257 @@ function playTheGame(){
     b8btn = document.getElementById("b8"); 
     b9btn = document.getElementById("b9"); 
 
-    if ((board1 == cross) && (board2 == cross) && (board3 == cross)) { 
-    dropItems();
-    b4btn.disabled = true; 
-    b5btn.disabled = true; 
-    b6btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
+    if((board1.innerHTML == board2.innerHTML) && (board2.innerHTML == board3.innerHTML))
+    {
+        if(board1.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board1.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        }
+    }
 
-    b1btn.style.color = "red"; 
-    b2btn.style.color = "red"; 
-    b3btn.style.color = "red"; 
-} 
-else if (( board1 == cross) && (board4 == 'x' || 
-    board4 == cross) && (board7 == 'x' || board7 == cross)) { 
-    dropItems();
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b5btn.disabled = true; 
-    b6btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b1btn.style.color = "red"; 
-    b4btn.style.color = "red"; 
-    b7btn.style.color = "red"; 
-} 
-else if ((board7 == 'x' || board7 == cross) && (board8 == 'x' || 
-    board8 == cross) && (board9 == 'x' || board9 == cross)) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b4btn.disabled = true; 
-    b5btn.disabled = true; 
-    b6btn.disabled = true; 
-
-    b7btn.style.color = "red"; 
-    b8btn.style.color = "red"; 
-    b9btn.style.color = "red"; 
-} 
-else if ((board3 == 'x' || board3 == cross) && (board6 == 'x' || 
-    board6 == cross) && (board9 == 'x' || board9 == cross)) { 
-    dropItems()
-
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b4btn.disabled = true; 
-    b5btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
-
-    b3btn.style.color = "red"; 
-    b6btn.style.color = "red"; 
-    b9btn.style.color = "red"; 
-} 
-else if ((board1 == 'x' || board1 == cross) && (board5 == 'x' || 
-    board5 == cross) && (board9 == 'x' || board9 == cross)) { 
-    dropItems()
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b4btn.disabled = true; 
-    b6btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
-
-    b1btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b9btn.style.color = "red"; 
-} 
-else if ((board3 == 'x' || board3 == cross) && (board5 == 'x' || 
-    board5 == cross) && (board7 == 'x' || board7 == cross)) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b4btn.disabled = true; 
-    b6btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b3btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b7btn.style.color = "red"; 
-} 
-else if ((board2 == 'x' || board2 == cross) && (board5 == 'x' || 
-    board5 == cross) && (board8 == 'x' || board8 == cross)) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b4btn.disabled = true; 
-    b6btn.disabled = true; 
-    b7btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b2btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b8btn.style.color = "red"; 
-} 
-else if ((board4 == 'x' || board4 == cross) && (board5 == 'x' || 
-    board5 == cross) && (board6 == 'x' || board6 == cross)) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b4btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b6btn.style.color = "red"; 
-} 
-
-else if ((board1 == '0' || board1 == cross) && (board2 == '0' || 
-    b2 == cross) && (b3 == '0' || b3 == cross)) { 
-    dropItems()
-    b4btn.disabled = true; 
-    b5btn.disabled = true; 
-    b6btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b1btn.style.color = "red"; 
-    b2btn.style.color = "red"; 
-    b3btn.style.color = "red"; 
-} 
-else if ((board1 == circle) && (board4 == circle) && (board7 == circle)) { 
-    dropItems()
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b5btn.disabled = true; 
-    b6btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b1btn.style.color = "red"; 
-    b4btn.style.color = "red"; 
-    b7btn.style.color = "red"; 
-} 
-else if ((board7 == circle) && (board8 == circle) && (board9 == circle)) { 
-    dropItems() 
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b4btn.disabled = true; 
-    b5btn.disabled = true; 
-    b6btn.disabled = true; 
-
-    b7btn.style.color = "red"; 
-    b8btn.style.color = "red"; 
-    b9btn.style.color = "red"; 
-} 
-else if ((board3 == '0' || board3 == '0') && (board6 == '0' || 
-    board6 == '0') && (board9 == '0' || board9 == '0')) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b4btn.disabled = true; 
-    b5btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
+   else if((board1.innerHTML == board5.innerHTML) && (board5.innerHTML == board9.innerHTML))
+    {
+        if(board1.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board1.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        } 
+    }
+   else if((board2.innerHTML == board5.innerHTML) && (board5.innerHTML == board8.innerHTML))
+    {
+        if(board2.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board2.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        }
+    }
+    else if((board3.innerHTML == board6.innerHTML) && (board6.innerHTML == board9.innerHTML))
+    {
+        if(board3.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board3.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        }
+    }
+   else if((board4.innerHTML == board5.innerHTML) && (board5.innerHTML == board6.innerHTML))
+    {
+        if(board4.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board4.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        }
+       
+    }
+    else if((board1.innerHTML == board4.innerHTML) && (board4.innerHTML == board7.innerHTML)){
+        if(board1.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board1.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        }
+    }
+    else if((board3.innerHTML == board5.innerHTML) && (board5.innerHTML == board7.innerHTML)){
+        if(board3.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board3.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        }
+    }
+    else if((board7.innerHTML == board8.innerHTML) && (board8.innerHTML == board9.innerHTML)){
+        if(board7.innerHTML === "X"){
+            console.log("win")
+            document.getElementById('onescore').textContent = `Player 1 Wins: ${onescore + 1}`;
+            
+        }
+        else if(board7.innerHTML === "O"){
+            document.getElementById('twoscore').textContent = `Player 2 Wins: ${twoscore + 1}`
+        }
+    }
+    else if(turns === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+        location.reload()
+    }
     
-    b3btn.style.color = "red"; 
-    b6btn.style.color = "red"; 
-    b9btn.style.color = "red"; 
-} 
-else if ((board1 == '0' || board1 == '0') && (board5 == '0' || 
-    board5 == '0') && (board9 == '0' || board9 == '0')) { 
-    dropItems()
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b4btn.disabled = true; 
-    b6btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
-
-    b1btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b9btn.style.color = "red"; 
-} 
-else if ((board3 == '0' || board3 == '0') && (board5 == '0' || 
-    board5 == '0') && (board7 == '0' || board7 == '0')) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b4btn.disabled = true; 
-    b6btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b3btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b7btn.style.color = "red"; 
-} 
-else if ((board2 == '0' || board2 == '0') && (board5 == '0' || 
-    board5 == '0') && (board8 == '0' || board8 == '0')) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b3btn.disabled = true; 
-    b4btn.disabled = true; 
-    b6btn.disabled = true; 
-    b7btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b2btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b8btn.style.color = "red"; 
-} 
-else if ((board4 == '0' || board4 == '0') && (board5 == '0' || 
-    board5 == '0') && (board6 == '0' || board6 == '0')) { 
-    dropItems()
-    b1btn.disabled = true; 
-    b2btn.disabled = true; 
-    b3btn.disabled = true; 
-    b7btn.disabled = true; 
-    b8btn.disabled = true; 
-    b9btn.disabled = true; 
-
-    b4btn.style.color = "red"; 
-    b5btn.style.color = "red"; 
-    b6btn.style.color = "red"; 
-} 
-
-
-else if ((board1 == 'X' || board1 == '0') && (board2 == 'X'
-    || board2 == '0') && (board3 == 'X' || board3 == '0') && 
-    (board4 == 'X' || board4 == '0') && (board5 == 'X' || 
-        board5 == '0') && (board6 == 'X' || board6 == '0') && 
-    (board7 == 'X' || board7 == '0') && (board8 == 'X' || 
-        board8 == '0') && (board9 == 'X' || board9 == '0')) { 
-    document.getElementById('print').innerHTML = "Match Tie"; 
-} 
-else { 
-
-    if (flag == 1) { 
-        document.getElementById('print') 
-            .innerHTML = "Player X Turn"; 
+    if (turn == 1) { 
+        document.getElementById('print').innerHTML = "Player X Turn"; 
+    } 
+    else if(turn === 9){
+        
     } 
     else { 
         document.getElementById('print') 
             .innerHTML = "Player 0 Turn"; 
     } 
-} 
-}
-function playGame(e){
-    e.preventDefault()
-    if(circle = "dragged"){
-            let player1Text = document.createElement('p')
-            player1Text.innerHTML = "<p>Player 2 moved</p>";
-            document.getElementById("circle-box").appendChild(playerText)
-            let circle = document.querySelector("div")
-            circle.setAttribute("draggable", false)
-            
-        }
-        else if(cross = "dragged"){
-            let player2Text = document.createElement('p')
-            player2Text.innerHTML = '<p>Player 2 moved</p>';
-            document.getElementById("circle-box").disabled = false
-            document.getElementById("cross-box").disabled = true
-        }
-  
-}
-playGame();
-function getWinner(){
-    var player1;
-    var player2;
-    circle = player1;
-    cross = player2;
-    score = 0;
-    tieScore = 0;
-    winner.push([1, 2, 3]);
-    winner.push([4, 5, 6]);
-    winner.push([7, 8, 9]);
-    winner.push([1, 4, 7]);
-    winner.push([2, 5, 8]);
-    winner.push([3, 6, 9]);
-    winner.push([1, 5, 9]);
-    winner.push([3, 5, 7]);
-
     
-
-    if(player1 || player2 === winner){
-        score += 1
+} 
+function turn1(){
+    if(turn === 1){
+        document.getElementById('b1').innerHTML = 'X';
+        document.getElementById('b1').disabled = true
+        turn = 0; 
     }
-    else{
-        tieScore += 1
+    else if(turn === 0) { 
+        document.getElementById('b1').innerHTML = 'O'; 
+        document.getElementById("b1").disabled = true; 
+        turn = 1
+    } 
+    else if(turn === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
     }
 }
+function turn2(){
+    if(turn === 1){
+        document.getElementById('b2').innerHTML = 'X';
+        document.getElementById("b2").disabled = true; 
+        turn = 0;
+        turns += 1 
+    }
+    else if(turns === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+    }
+    else{ 
+        document.getElementById("b2").innerHTML = "O"; 
+        document.getElementById("b2").disabled = true; 
+        turn = 1; 
+    } 
+   
+}
+function turn3(){
+    if(turn === 1){
+        document.getElementById('b3').innerHTML = 'X';
+        document.getElementById("b3").disabled = true; 
+        turn = 0
+        turns += 1
+    }
+    else if(turn === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+    }
+    else if(turn === 0) { 
+        document.getElementById("b3").innerHTML = "O"; 
+        document.getElementById("b3").disabled = true; 
+        turn = 1; 
+    } 
+    
+}
+function turn4(){
+    if(turn === 1){
+        document.getElementById('b4').innerHTML = 'X';
+        document.getElementById("b4").disabled = true; 
+        turn = 0; 
+        turns += 1
+    }
+    else if(turn === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+    } 
+    else{ 
+        document.getElementById("b4").innerHTML = "O"; 
+        document.getElementById("b4").disabled = true; 
+        turn = 1; 
+    }
+    
+}
+function turn5(){
+    if(turn === 1){
+        document.getElementById('b5').innerHTML = 'X';
+        document.getElementById("b5").disabled = true; 
+        turn = 0; 
+        turns += 1
+    }
+    else if(turn === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+    } 
+    else { 
+        document.getElementById("b5").innerHTML = "O"; 
+        document.getElementById("b5").disabled = true; 
+        turn = 1; 
+    } 
+}
+function turn6(){
+    if(turn === 1){
+        document.getElementById('b6').innerHTML = 'X';
+        document.getElementById("b6").disabled = true; 
+        turn = 0; 
+        turns += 1
+    }
+    else if(turn === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+    } 
+    else { 
+        document.getElementById("b6").innerHTML = "O"; 
+        document.getElementById("b6").disabled = true; 
+        turn = 1; 
+    } 
+}
+function turn7(){
+    if(turn === 1){
+        document.getElementById('b7').innerHTML = 'X';
+        document.getElementById("b7").disabled = true; 
+        turn = 0; 
+        turns += 1
+    }
+    
+    else { 
+        document.getElementById("b7").innerHTML = "O"; 
+        document.getElementById("b7").disabled = true; 
+        turn = 1; 
+    } 
+}
+function turn8(){
+    if(turn === 1){
+        document.getElementById('b8').innerHTML = 'X';
+        document.getElementById("b8").disabled = true; 
+        turn = 0; 
+        turns += 1
+    }
+    else if(turn === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+    } 
+    else { 
+        document.getElementById("b8").innerHTML = "O"; 
+        document.getElementById("b8").disabled = true; 
+        turn = 1; 
+    } 
+}
+function turn9(){
+    if(turn === 1){
+        document.getElementById('b9').innerHTML = 'X';
+        document.getElementById("b9").disabled = true; 
+        turn = 0; 
+        turns += 1
+    }
+    else if(turn === 9){
+        document.getElementById('tiescore').textContent = `It's a Tie`
+        
+    } 
+    else { 
+        document.getElementById("b9").innerHTML = "O"; 
+        document.getElementById("b9").disabled = true; 
+        turn = 1; 
+    } 
+}
+
 function reset(){
     location.reload()
     board1 = board2 = board3 = board4 = board5 = board6 = board7 = board8 = board9 = '';
-}
-function turns(){
-    
 }

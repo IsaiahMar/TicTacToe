@@ -12,44 +12,78 @@
     <div class="wlt">
         <ul>
 
-            <li class="score">Player 1 Wins:</li>
-            <li class="score">Player 2 Wins:</li>
-            <li id="tieScore">Ties:</li>
+            <li id="onescore"></li>
+            <li id="twoscore"></li>
+            <li id="tieScore"></li>
         </ul>
     </div>
     
     <section class="board">
         <div class="grid">
-            <div class="grid-square" id="b1">
+            <div class="grid-square" onclick="turn1(); playTheGame();"  id="b1">
+            </div>
+            <div class="grid-square" onclick="turn2(); playTheGame(); "  id="b2">
                 
             </div>
-            <div class="grid-square"  id="b2">
+            <div class="grid-square" onclick="turn3(); playTheGame(); "  id="b3">
+            
+            </div>
+            <div class="grid-square"  onclick="turn4(); playTheGame(); " id="b4" >
                 
             </div>
-            <div class="grid-square"  id="b3">
-                
+            <div class="grid-square"  onclick="turn5(); playTheGame(); " id="b5">
+
             </div>
-            <div class="grid-square" id="b4">
-                
+            <div class="grid-square" onclick="turn6(); playTheGame(); " id="b6">
+    
             </div>
-            <div class="grid-square"  id="b5">
-              
+            <div class="grid-square" onclick="turn7(); playTheGame(); " id="b7">
+        
             </div>
-            <div class="grid-square"  id="b6">
-                
+            <div class="grid-square" onclick="turn8(); playTheGame(); " id="b8">
+        
             </div>
-            <div class="grid-square" id="b7">
-                
-            </div>
-            <div class="grid-square"  id="b8">
-                
-            </div>
-            <div class="grid-square" id="b9">
-                
+            <div class="grid-square" onclick="turn9(); playTheGame(); " id="b9">
+    
             </div>
         </div>
-        <p id="test"></p>
     </section>
+        <!-- <div class = "ui"> 
+            <div class="grid"> 
+                <input type="text" id= "b1" 
+                       class="cell" onclick="turn1(); playTheGame();" 
+                       readonly> 
+                <input type="text" id= "b2" 
+                       class="cell" onclick="turn2(); playTheGame();" 
+                       readonly> 
+                <input type="text" id= "b3" class="cell" 
+                       onclick="turn3(); playTheGame();" 
+                       readonly> 
+            </div> 
+            <div class="row"> 
+                <input type="text" id= "b4" 
+                       class="cell" onclick="turn4(); playTheGame();" 
+                       readonly> 
+                <input type="text" id= "b5" 
+                       class="cell" onclick="turn5(); playTheGame();" 
+                       readonly> 
+                <input type="text" id= "b6" 
+                       class="cell" onclick="turn6(); playTheGame();" 
+                       readonly> 
+            </div> 
+            <div class="row"> 
+                <input type="text" id= "b7" 
+                       class="cell" onclick="turn7(); playTheGame();" 
+                       readonly> 
+                <input type="text" id= "b8" 
+                       class="cell" onclick="turn8(); playTheGame();" 
+                       readonly> 
+                <input type="text" id= "b9" 
+                       class="cell" onclick="turn9(); playTheGame();" 
+                       readonly>  -->
+        <p id="playerText"></p>
+        <p id="print"></p>
+    
   
     <section class="other-controls">
         <button id="reset" onclick="reset();">Reset</button>
